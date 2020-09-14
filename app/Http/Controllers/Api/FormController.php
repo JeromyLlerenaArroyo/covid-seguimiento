@@ -50,7 +50,7 @@ class FormController extends Controller
         $data = request()->all();
 
         $person = Person::create([
-            'firt_name' => request('firt_name'),
+            'first_name' => request('first_name'),
             'last_name' => request('last_name'),
             'dni' => request('dni'),
             'birth_date' => request('birth_date'),

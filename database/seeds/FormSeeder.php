@@ -14,6 +14,7 @@ class FormSeeder extends Seeder
     {
         DB::table('forms')->insert([
         	['id' => Form::HOME, 'name' => 'Despistaje'],
+            ['id' => Form::TRACK, 'name' => 'Seguimiento'],
         ]);
 
         DB::table('details')->insert([
@@ -28,6 +29,14 @@ class FormSeeder extends Seeder
         	['id' => 9, 'form_id' => Form::HOME, 'question' => 'Pérdida del olfato o gusto', 'weight' => 1],
         	['id' => 10, 'form_id' => Form::HOME, 'question' => 'Erupciones cutáneas', 'weight' => 1],
         	['id' => 11, 'form_id' => Form::HOME, 'question' => 'Pérdida de color de los dedos de las manos o de los pies', 'weight' => 1],
+            ['id' => 12, 'form_id' => Form::TRACK, 'question' => 'Tuvo contacto con personas infectadas con el virus en esta semana?', 'weight' => 1],
+            ['id' => 13, 'form_id' => Form::TRACK, 'question' => 'Vive ud. solo(a)?', 'weight' => 1],
+            ['id' => 14, 'form_id' => Form::TRACK, 'question' => 'Se encuentra vacunado(a) contra la influenza?', 'weight' => 1],
+            ['id' => 15, 'form_id' => Form::TRACK, 'question' => 'Se encuentra vacunado(a) contra el neumococo?', 'weight' => 1],
+            ['id' => 16, 'form_id' => Form::TRACK, 'question' => 'Pertenece a algun sistema de salud?', 'weight' => 1],
+            ['id' => 17, 'form_id' => Form::TRACK, 'question' => 'Ha presentado tos en esta semana?', 'weight' => 1],
+            ['id' => 18, 'form_id' => Form::TRACK, 'question' => 'Ha presentado dificutad para respirar en esta semana?', 'weight' => 1],
+            ['id' => 19, 'form_id' => Form::TRACK, 'question' => 'Ha tenido malestar (fiebre, dolor de cuerpo) esta semana?', 'weight' => 1],
         ]);
     }
 }

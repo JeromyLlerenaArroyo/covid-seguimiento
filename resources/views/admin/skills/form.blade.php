@@ -1,0 +1,38 @@
+@extends('layouts.app')
+
+@section('route', $route)
+
+@section('main_action')
+<a href="{{ route('admin.skills.index') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-arrow-left fa-sm text-white-50"></i>&nbsp;Volver</a>
+@endsection
+
+@section('content')
+<form
+class="form-row"
+@switch($form_mode)
+	@case(MODE_NEW)
+		action="{{route('admin.skills.create')}}"
+	@break
+	@case(MODE_EDIT)
+		action="{{route('admin.skills.edit', $skill->id)}}"
+	@break
+@endswitch
+method="post"
+enctype="multipart/form-data"
+>
+	@csrf
+	<div class="col-md-8 offset-md-2">
+		<div class="row">
+			<x-text-input label="Nombre" id="name" col="6" :mode="$form_mode" :val="isset($skill) ? $skill->name : ''"/>
+		</div>
+		<div class="row">
+			<x-submit-button col="3" :mode="$form_mode"/>
+		</div>
+	</div>
+</form>
+@endsection
+
+@push('scripts')
+<script type="text/javascript">
+</script>
+@endpush
